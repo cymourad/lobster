@@ -17,11 +17,12 @@ import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
+import Tooltip from "@material-ui/core/Tooltip";
 import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles({
 	root: {
-		maxWidth: 345,
+		width: 345,
 		margin: 50,
 	},
 	media: {
@@ -45,12 +46,16 @@ const TeamMemberCard = ({
 			<CardActionArea>
 				<CardMedia className={classes.media} image={image} title={name} />
 				<CardContent>
-					<Typography gutterBottom variant="h5" component="h2">
-						{name}
-					</Typography>
-					<Typography variant="body2" color="textSecondary" component="p">
-						{description}
-					</Typography>
+					<Tooltip title={hobbies} arrow placement="right">
+						<Typography gutterBottom variant="h5" component="h2">
+							{name}
+						</Typography>
+					</Tooltip>
+					<Tooltip title={skills} arrow placement="left">
+						<Typography variant="body2" color="textSecondary" component="p">
+							{description}
+						</Typography>
+					</Tooltip>
 				</CardContent>
 			</CardActionArea>
 			<CardActions>

@@ -26,7 +26,9 @@ const Team = () => {
 			<div
 				style={{
 					display: "flex",
+					flexWrap: "wrap",
 					flexDirection: "row",
+					justifyContent: "center",
 				}}
 			>
 				{members.map((member) => (
@@ -60,7 +62,7 @@ const members = [
 		name: "Chris",
 		image: chrisImage,
 		hobbies: ["🧗", "🏋️"],
-		skills: ["JS", "React"],
+		skills: "JS, React",
 		description: "Project Manager",
 		linkedin: "https://www.linkedin.com/in/christian-mourad-a35710192/",
 		github: "https://github.com/cymourad",
