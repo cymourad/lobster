@@ -10,8 +10,6 @@
  */
 
 import React from "react";
-
-import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
@@ -24,6 +22,7 @@ import Typography from "@material-ui/core/Typography";
 const useStyles = makeStyles({
 	root: {
 		maxWidth: 345,
+		margin: 50,
 	},
 	media: {
 		height: 140,
@@ -35,35 +34,39 @@ const TeamMemberCard = ({
 	name,
 	skills,
 	hobbies,
+	github,
 	description,
-	blogs,
+	linkedin,
 }) => {
 	const classes = useStyles();
 
 	return (
 		<Card className={classes.root}>
 			<CardActionArea>
-				<CardMedia
-					className={classes.media}
-					image="/static/images/cards/contemplative-reptile.jpg"
-					title="Contemplative Reptile"
-				/>
+				<CardMedia className={classes.media} image={image} title={name} />
 				<CardContent>
 					<Typography gutterBottom variant="h5" component="h2">
-						Lizard
+						{name}
 					</Typography>
 					<Typography variant="body2" color="textSecondary" component="p">
-						Lizards are a widespread group of squamate reptiles, with over 6,000
-						species, ranging across all continents except Antarctica
+						{description}
 					</Typography>
 				</CardContent>
 			</CardActionArea>
 			<CardActions>
-				<Button size="small" color="primary">
-					Share
+				<Button
+					size="small"
+					color="primary"
+					onClick={() => window.open(github)}
+				>
+					GitHub
 				</Button>
-				<Button size="small" color="primary">
-					Learn More
+				<Button
+					size="small"
+					color="primary"
+					onClick={() => window.open(linkedin)}
+				>
+					Linkedin
 				</Button>
 			</CardActions>
 		</Card>
