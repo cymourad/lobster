@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/fydp-website/static/css/main.8c8b27cf.chunk.css",
+    "main.js": "/fydp-website/static/js/main.f77ca399.chunk.js",
+    "main.js.map": "/fydp-website/static/js/main.f77ca399.chunk.js.map",
+    "runtime-main.js": "/fydp-website/static/js/runtime-main.8e7e8135.js",
+    "runtime-main.js.map": "/fydp-website/static/js/runtime-main.8e7e8135.js.map",
+    "static/js/2.6c431697.chunk.js": "/fydp-website/static/js/2.6c431697.chunk.js",
+    "static/js/2.6c431697.chunk.js.map": "/fydp-website/static/js/2.6c431697.chunk.js.map",
+    "static/js/3.68c419c0.chunk.js": "/fydp-website/static/js/3.68c419c0.chunk.js",
+    "static/js/3.68c419c0.chunk.js.map": "/fydp-website/static/js/3.68c419c0.chunk.js.map",
+    "index.html": "/fydp-website/index.html",
+    "static/css/main.8c8b27cf.chunk.css.map": "/fydp-website/static/css/main.8c8b27cf.chunk.css.map",
+    "static/js/2.6c431697.chunk.js.LICENSE.txt": "/fydp-website/static/js/2.6c431697.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/fydp-website/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8e7e8135.js",
+    "static/js/2.6c431697.chunk.js",
+    "static/css/main.8c8b27cf.chunk.css",
+    "static/js/main.f77ca399.chunk.js"
+  ]
+}
