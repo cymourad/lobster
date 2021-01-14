@@ -5,14 +5,19 @@
  */
 
 import React from "react";
+import BlogCard from "../components/BlogCard";
 // import Timeline from "../components/Timeline";
+
+import blogs from "../resources/data/blogs";
 
 const Progress = () => {
 	return (
-		<>
+		<div style={{ textAlign: "center" }}>
 			<h1>Our Journey</h1>
-			{/* <Timeline /> */}
-		</>
+			{blogs.map((blog) => (
+				<BlogCard title={blog.title} image={blog.image} text={blog.summary} />
+			))}
+		</div>
 	);
 };
 
