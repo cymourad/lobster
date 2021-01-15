@@ -23,7 +23,14 @@ const Progress = () => {
 			<BlogSearchFilter allBlogs={blogInfo} setBlogs={setBlogs} />
 			{blogs ? (
 				blogs.map((blog) => (
-					<BlogCard title={blog.title} image={blog.image} text={blog.summary} />
+					<BlogCard
+						title={blog.title}
+						image={blog.image}
+						text={blog.summary}
+						subsystems={blog.subsystems}
+						authors={blog.authors}
+						date={blog.date}
+					/>
 				))
 			) : (
 				<p>You might wanna adjust your filters!</p>
