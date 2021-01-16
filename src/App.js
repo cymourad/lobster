@@ -13,6 +13,7 @@ import Home from "./pages/Home";
 import Motivaton from "./pages/Motivation";
 import MobileApp from "./pages/MobileApp";
 import Progress from "./pages/Progress";
+import Blog from "./pages/Blog";
 import Team from "./pages/Team";
 import Dashboard from "./pages/Dashboard";
 import NotFound from "./pages/NotFound";
@@ -24,27 +25,14 @@ function App() {
 		<Router>
 			<Navbar />
 			<Switch>
-				<Route exact path={FRONT_END_ROUTE.HOME}>
-					<Home />
-				</Route>
-				<Route exact path={FRONT_END_ROUTE.MOTIVATION}>
-					<Motivaton />
-				</Route>
-				<Route exact path={FRONT_END_ROUTE.TEAM}>
-					<Team />
-				</Route>
-				<Route exact path={FRONT_END_ROUTE.APP}>
-					<MobileApp />
-				</Route>
-				<Route exact path={FRONT_END_ROUTE.DASHBOARD}>
-					<Dashboard />
-				</Route>
-				<Route exact path={FRONT_END_ROUTE.PROGRESS}>
-					<Progress />
-				</Route>
-				<Route>
-					<NotFound />
-				</Route>
+				<Route exact path={FRONT_END_ROUTE.HOME} component={Home} />
+				<Route exact path={FRONT_END_ROUTE.MOTIVATION} component={Motivaton} />
+				<Route exact path={FRONT_END_ROUTE.TEAM} component={Team} />
+				<Route exact path={FRONT_END_ROUTE.APP} component={MobileApp} />
+				<Route exact path={FRONT_END_ROUTE.DASHBOARD} component={Dashboard} />
+				<Route exact path={FRONT_END_ROUTE.PROGRESS} component={Progress} />
+				<Route path={FRONT_END_ROUTE.PROGRESS + "/:title"} component={Blog} />
+				<Route component={NotFound} />
 			</Switch>
 		</Router>
 	);

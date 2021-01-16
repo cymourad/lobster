@@ -14,7 +14,7 @@ import logo from "./resources/images/home/logo.png";
 
 const useStyles = makeStyles({
 	root: {
-		backgroundColor: "#0F4C5C",
+		backgroundColor: "#002984",
 		minHeight: 30,
 		padding: 10,
 	},
@@ -34,7 +34,7 @@ const useStyles = makeStyles({
 		margin: 10,
 	},
 	activeLink: {
-		color: "#E36414",
+		color: "#f50057",
 	},
 });
 
@@ -59,6 +59,7 @@ const Navbar = () => {
 
 				<NavLink
 					to={FRONT_END_ROUTE.TEAM}
+					exact
 					className={classes.link}
 					activeClassName={classes.activeLink}
 				>

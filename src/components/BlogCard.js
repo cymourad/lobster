@@ -16,14 +16,16 @@ import { Link } from "react-router-dom";
 import Typography from "@material-ui/core/Typography";
 import { CalendarToday, AccountCircle } from "@material-ui/icons";
 
+import FRONT_END_ROUTE from "../resources/routes/frontEndRoutes";
 import { subsystemIcon } from "../resources/data/subsystems";
 
 const useStyles = makeStyles(() => ({
 	root: {
 		width: "90%",
-		maxWidth: 600,
+		maxWidth: 1000,
 		display: "flex",
 		textAlign: "start",
+		margin: 10,
 	},
 	details: {
 		display: "flex",
@@ -38,7 +40,7 @@ const useStyles = makeStyles(() => ({
 	},
 }));
 
-const BlogCard = ({ image, title, text, link, subsystems, authors, date }) => {
+const BlogCard = ({ image, title, text, subsystems, authors, date }) => {
 	const classes = useStyles();
 
 	return (
@@ -79,7 +81,9 @@ const BlogCard = ({ image, title, text, link, subsystems, authors, date }) => {
 						{text}
 					</Typography>
 					<CardActions>
-						<Link to={link}>
+						<Link
+							to={FRONT_END_ROUTE.PROGRESS + "/" + title.split(" ").join("-")}
+						>
 							<Button size="small" color="primary">
 								Read more
 							</Button>

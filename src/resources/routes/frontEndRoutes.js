@@ -14,9 +14,3 @@ const FRONT_END_ROUTE = {
 };
 
 export default FRONT_END_ROUTE;
-
-// these are the blog routes, they go after /progress
-// ex: /progress/image-processing
-export const BLOG_ROUTE = {
-	IMAGE_PROCESSING: FRONT_END_ROUTE.PROGRESS + "/image-processing",
-};

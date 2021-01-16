@@ -21,20 +21,22 @@ const Progress = () => {
 		<div style={{ textAlign: "center" }}>
 			<h1>Our Journey</h1>
 			<BlogSearchFilter allBlogs={blogInfo} setBlogs={setBlogs} />
-			{blogs ? (
-				blogs.map((blog) => (
-					<BlogCard
-						title={blog.title}
-						image={blog.image}
-						text={blog.summary}
-						subsystems={blog.subsystems}
-						authors={blog.authors}
-						date={blog.date}
-					/>
-				))
-			) : (
-				<p>You might wanna adjust your filters!</p>
-			)}
+			<div style={{ display: "flex", justifyContent: "center" }}>
+				{blogs ? (
+					blogs.map((blog) => (
+						<BlogCard
+							title={blog.title}
+							image={blog.image}
+							text={blog.summary}
+							subsystems={blog.subsystems}
+							authors={blog.authors}
+							date={blog.date}
+						/>
+					))
+				) : (
+					<p>You might wanna adjust your filters!</p>
+				)}
+			</div>
 		</div>
 	);
 };

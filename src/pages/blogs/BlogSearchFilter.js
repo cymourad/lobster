@@ -18,6 +18,7 @@ import { TEAM_MEMBER_NAME } from "../../resources/data/team";
 const useStyles = makeStyles((theme) => ({
 	root: {
 		display: "flex",
+		justifyContent: "center",
 	},
 	formControl: {
 		margin: theme.spacing(3),
@@ -107,6 +108,7 @@ const BlogSearchFilter = ({ allBlogs, setBlogs }) => {
 									checked={subsystemSelected[key]}
 									onChange={handleSubsystemChange}
 									name={key}
+									color="primary"
 								/>
 							}
 							label={SUBSYSTEM[key]}
