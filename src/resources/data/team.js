@@ -3,11 +3,11 @@
  */
 
 // import images of team members
-import alecImage from "../images/team/chris.jpg";
+import alecImage from "../images/team/Alec.jpg";
 import chrisImage from "../images/team/chris.jpg";
-import danielImage from "../images/team/chris.jpg";
-import husseinImage from "../images/team/chris.jpg";
-import jasonImage from "../images/team/chris.jpg";
+import danielImage from "../images/team/Daniel.jpg";
+import husseinImage from "../images/team/Hussein.jpg";
+import jasonImage from "../images/team/Jason.jpg";
 
 export const TEAM_MEMBER_NAME = {
 	ALEC: "Alec",
@@ -55,7 +55,7 @@ export const teamMemberInfo = [
 		github: "https://github.com/husseinalkasake",
 	},
 	{
-		name: TEAM_MEMBER_NAME.HUSSEIN,
+		name: TEAM_MEMBER_NAME.JASON,
 		image: jasonImage,
 		hobbies: ["⚾", "🏋️"],
 		skills: ["CAD", "3D Print"],

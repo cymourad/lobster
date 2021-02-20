@@ -14,9 +14,9 @@ const Team = () => {
 		<div style={{ textAlign: "center" }}>
 			<h1>The Team</h1>
 			<p>
-				Some words about the team! We all study Mechantronics Engineering at the
-				University of Waterloo. This has been an interseting project to conduct
-				remotely over virtual meetings due to COVID-19.
+				Some information about the team! We all study Mechatronics Engineering at the
+				University of Waterloo. Overall, this has been an interesting project to conduct
+				remotely over virtual meetings, as a result of COVID-19.
 			</p>
 			<div
 				style={{
