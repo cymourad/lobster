@@ -1,25 +1,30 @@
 {
   "files": {
     "main.css": "/lobster/static/css/main.8c8b27cf.chunk.css",
-    "main.js": "/lobster/static/js/main.c45430f3.chunk.js",
-    "main.js.map": "/lobster/static/js/main.c45430f3.chunk.js.map",
-    "runtime-main.js": "/lobster/static/js/runtime-main.47efa407.js",
-    "runtime-main.js.map": "/lobster/static/js/runtime-main.47efa407.js.map",
-    "static/js/2.22d30a44.chunk.js": "/lobster/static/js/2.22d30a44.chunk.js",
-    "static/js/2.22d30a44.chunk.js.map": "/lobster/static/js/2.22d30a44.chunk.js.map",
-    "static/js/3.7c4bd677.chunk.js": "/lobster/static/js/3.7c4bd677.chunk.js",
-    "static/js/3.7c4bd677.chunk.js.map": "/lobster/static/js/3.7c4bd677.chunk.js.map",
+    "main.js": "/lobster/static/js/main.7f1e56bf.chunk.js",
+    "main.js.map": "/lobster/static/js/main.7f1e56bf.chunk.js.map",
+    "runtime-main.js": "/lobster/static/js/runtime-main.82dce924.js",
+    "runtime-main.js.map": "/lobster/static/js/runtime-main.82dce924.js.map",
+    "static/js/2.78371ec8.chunk.js": "/lobster/static/js/2.78371ec8.chunk.js",
+    "static/js/2.78371ec8.chunk.js.map": "/lobster/static/js/2.78371ec8.chunk.js.map",
+    "static/js/3.2e8a9691.chunk.js": "/lobster/static/js/3.2e8a9691.chunk.js",
+    "static/js/3.2e8a9691.chunk.js.map": "/lobster/static/js/3.2e8a9691.chunk.js.map",
     "index.html": "/lobster/index.html",
     "static/css/main.8c8b27cf.chunk.css.map": "/lobster/static/css/main.8c8b27cf.chunk.css.map",
-    "static/js/2.22d30a44.chunk.js.LICENSE.txt": "/lobster/static/js/2.22d30a44.chunk.js.LICENSE.txt",
+    "static/js/2.78371ec8.chunk.js.LICENSE.txt": "/lobster/static/js/2.78371ec8.chunk.js.LICENSE.txt",
+    "static/media/Alec.536b9f8d.jpg": "/lobster/static/media/Alec.536b9f8d.jpg",
+    "static/media/Daniel.d09a7d90.jpg": "/lobster/static/media/Daniel.d09a7d90.jpg",
+    "static/media/Hussein.9d902724.jpg": "/lobster/static/media/Hussein.9d902724.jpg",
+    "static/media/Jason.cb414e00.jpg": "/lobster/static/media/Jason.cb414e00.jpg",
     "static/media/chris.5f1dd342.jpg": "/lobster/static/media/chris.5f1dd342.jpg",
     "static/media/logo.a481be68.png": "/lobster/static/media/logo.a481be68.png",
-    "static/media/posture-tracking-chris.f353a37a.png": "/lobster/static/media/posture-tracking-chris.f353a37a.png"
+    "static/media/posture-tracking-chris.f353a37a.png": "/lobster/static/media/posture-tracking-chris.f353a37a.png",
+    "static/media/work-session-base.7b36d5cb.png": "/lobster/static/media/work-session-base.7b36d5cb.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.47efa407.js",
-    "static/js/2.22d30a44.chunk.js",
+    "static/js/runtime-main.82dce924.js",
+    "static/js/2.78371ec8.chunk.js",
     "static/css/main.8c8b27cf.chunk.css",
-    "static/js/main.c45430f3.chunk.js"
+    "static/js/main.7f1e56bf.chunk.js"
   ]
 }
