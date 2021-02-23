@@ -6,10 +6,10 @@ import React from "react";
 
 const ImageProcessing = () => {
 	return (
-		<>
+		<div>
 			<h1>Image Processing</h1>
 			<p>Say some good things</p>
-		</>
+		</div>
 	);
 };
 

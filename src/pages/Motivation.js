@@ -6,9 +6,9 @@ import React from "react";
 
 const Motivation = () => {
 	return (
-		<>
+		<div>
 			<h1>Posture Crisis</h1>
-		</>
+		</div>
 	);
 };
 
