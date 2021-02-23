@@ -44,6 +44,10 @@ const SessionInfoForm = ({
 					onChange={(event) => {
 						setSessionID(event.target.value);
 					}}
+					style={{
+						marginRight: 20,
+						marginLeft: 20,
+					}}
 				/>
 				<Button
 					variant="contained"

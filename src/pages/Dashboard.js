@@ -5,9 +5,10 @@
  */
 
 import React, { useState, useEffect } from "react";
-import Recommendations from "./dashboard/Recommendations";
 import SessionInfoForm from "./dashboard/SessionInfoForm";
+import SessionChart from "./dashboard/SessionChart";
 import ScoreCircle from "./dashboard/ScoreCircle";
+import Recommendations from "./dashboard/Recommendations";
 
 const Dashboard = () => {
 	const [userID, setUserID] = useState(7); // the user ID for which we retreieve data
@@ -25,34 +26,54 @@ const Dashboard = () => {
 	/**
 	 * All the scores and recommendations that user had since beginning of session
 	 * Each object has the following properties:
-	 * - score: [number]
-	 * - recommendations: [array] of objects, where each object has 2 properties
-	 * -- property: [string] name of recommendation
-	 * -- user_message: [string] action to be done by user
+	 * - y: [number] the score
+	 * - tip: [array of strings] , each string is the user_message given at that time
 	 */
-	const [sessionHistory, setSessionHistory] = useState([]);
+	// TODO initialize as an empty array
+	const [sessionHistory, setSessionHistory] = useState(dummySessionHistory);
 
-	// useEffect();
+	// useEffect(() => {
+	// 	// Update the document title using the browser API
+	// 	document.title = `You clicked ${count} times`;
+	//   });
 
 	return (
 		<div>
-			<SessionInfoForm
-				userID={userID}
-				setUserID={setUserID}
-				sessionID={sessionID}
-				setSessionID={setSessionID}
-				sessionInfoIsEditable={sessionInfoIsEditable}
-				setSessionInfoIsEditable={setSessionInfoIsEditable}
-			/>
-			<div>
-				<div>
-					<p>Graph</p>
+			<div style={{ textAlign: "center", margin: 50 }}>
+				<SessionInfoForm
+					userID={userID}
+					setUserID={setUserID}
+					sessionID={sessionID}
+					setSessionID={setSessionID}
+					sessionInfoIsEditable={sessionInfoIsEditable}
+					setSessionInfoIsEditable={setSessionInfoIsEditable}
+				/>
+			</div>
+			<div
+				style={{
+					display: "flex",
+					flexDirection: "row",
+					justifyContent: "space-evenly",
+				}}
+			>
+				<div style={{ minWidth: 600 }}>
+					<SessionChart sessionHistory={sessionHistory} />
 				</div>
-				<div>
+				<div
+					style={{
+						display: "flex",
+						flexDirection: "column",
+						justifyContent: "space-between",
+						alignItems: "center",
+						minWidth: 500,
+					}}
+				>
 					<div>
 						<ScoreCircle score={currentScore} />
 					</div>
-					<Recommendations recommendations={currentRecommendations} />
+					<div>
+						<Recommendations recommendations={currentRecommendations} />
+					</div>
 				</div>
 			</div>
 		</div>
@@ -78,4 +99,30 @@ const dummyRecommendations = [
 		property: "face",
 		user_message: "Brush your teeth",
 	},
+];
+
+const dummySessionHistory = [
+	{ y: 64, tip: ["wash ur face", "brush your"] },
+	{ y: 61, tip: "wash ur face" },
+	{ y: 64, tip: "wash ur face" },
+	{ y: 62, tip: "wash ur face" },
+	{ y: 64, tip: "wash ur face" },
+	{ y: 60, tip: "wash ur face" },
+	{ y: 58, tip: "wash ur face" },
+	{ y: 59, tip: "wash ur face" },
+	{ y: 53, tip: "wash ur face" },
+	{ y: 54, tip: "wash ur face" },
+	{ y: 61, tip: "wash ur face" },
+	{ y: 60, tip: "wash ur face" },
+	{ y: 55, tip: "wash ur face" },
+	{ y: 60, tip: "wash ur face" },
+	{ y: 56, tip: "wash ur face" },
+	{ y: 60, tip: "wash ur face" },
+	{ y: 59.5, tip: "wash ur face" },
+	{ y: 63, tip: "wash ur face" },
+	{ y: 58, tip: "wash ur face" },
+	{ y: 54, tip: "wash ur face" },
+	{ y: 59, tip: "wash ur face" },
+	{ y: 64, tip: "wash ur face" },
+	{ y: 59, tip: "wash ur face" },
 ];

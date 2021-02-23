@@ -12,7 +12,7 @@ import Box from "@material-ui/core/Box";
 const ScoreCircle = ({ score }) => {
 	return (
 		<Box position="relative" display="inline-flex">
-			<CircularProgress variant="determinate" value={score} size={80} />
+			<CircularProgress variant="determinate" value={score} size={100} />
 			<Box
 				top={0}
 				left={0}
@@ -27,7 +27,7 @@ const ScoreCircle = ({ score }) => {
 					variant="caption"
 					component="div"
 					color="textSecondary"
-					style={{ fontSize: 16 }}
+					style={{ fontSize: 18 }}
 				>{`${Math.round(score)}%`}</Typography>
 			</Box>
 		</Box>
