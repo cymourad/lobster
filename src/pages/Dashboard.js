@@ -7,13 +7,15 @@
 import React, { useState, useEffect } from "react";
 import Recommendations from "./dashboard/Recommendations";
 import SessionInfoForm from "./dashboard/SessionInfoForm";
+import ScoreCircle from "./dashboard/ScoreCircle";
 
 const Dashboard = () => {
 	const [userID, setUserID] = useState(7); // the user ID for which we retreieve data
 	const [sessionID, setSessionID] = useState(29); // the session ID that we are exploring
 	const [sessionInfoIsEditable, setSessionInfoIsEditable] = useState(false);
 
-	const [currectScore, setCurrentScore] = useState(0); // the latest score of the user
+	// TODO initalize to 0
+	const [currentScore, setCurrentScore] = useState(87); // the latest score of the user
 
 	// TODO initialize this to an empty array
 	const [currentRecommendations, setCurrentRecommendations] = useState(
@@ -48,7 +50,7 @@ const Dashboard = () => {
 				</div>
 				<div>
 					<div>
-						<p>Score</p>
+						<ScoreCircle score={currentScore} />
 					</div>
 					<Recommendations recommendations={currentRecommendations} />
 				</div>
