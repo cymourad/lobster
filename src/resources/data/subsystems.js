@@ -17,7 +17,7 @@ export const SUBSYSTEM = {
 	CONTROLS: "controls",
 	FRONT_END: "front end",
 	BACK_END: "back end",
-	IMAGE_PROCESSIG: "image processing",
+	IMAGE_PROCESSING: "image processing",
 };
 
 export const subsystemIcon = {
@@ -26,5 +26,5 @@ export const subsystemIcon = {
 	[SUBSYSTEM.CONTROLS]: <Gamepad />,
 	[SUBSYSTEM.FRONT_END]: <PhoneAndroid />,
 	[SUBSYSTEM.BACK_END]: <Storage />,
-	[SUBSYSTEM.IMAGE_PROCESSIG]: <Collections />,
+	[SUBSYSTEM.IMAGE_PROCESSING]: <Collections />,
 };
