@@ -3,6 +3,7 @@
  */
 
 import React from "react";
+import ReactGoogleSlides from "react-google-slides";
 
 const Motivation = () => {
 	return (
@@ -89,6 +90,32 @@ const Motivation = () => {
 				can help them prevent future chronic bodily pain that is mainly due to
 				one sitting with bad posture for long periods of time.
 			</p>
+			<div
+				style={{
+					margin: 30,
+					display: "flex",
+					justifyContent: "space-around",
+					flexWrap: "wrap",
+				}}
+			>
+				{[
+					"https://docs.google.com/presentation/d/1DBTdG96vXCJsb-eX9B6nvy5jF84j1d9Jt4cvd-PYlgs/edit?usp=sharing", // Problem Definition
+					"https://docs.google.com/presentation/d/1kvVTFJ8E8NzV-EPF2Dj4M7a1feCRvj8q02DtWZxflXM/edit?usp=sharing", // Prototypes
+					"https://docs.google.com/presentation/d/1KiT66rXMZTN0UPI4bfEWn1N0ZE1czSRl9aj4wEYQGHU/edit?usp=sharing", // PDP
+					"https://docs.google.com/presentation/d/1sNWBygB_3CWPgOcTMIl-NwvTaNyO8UHoxyB4PWMQLMw/edit?usp=sharing", //FDP
+				].map((presenstationLink) => (
+					<div style={{ marginTop: 20 }}>
+						<ReactGoogleSlides
+							width={640}
+							height={389}
+							slidesLink={presenstationLink}
+							// slideDuration={5}
+							showControls
+							// loop
+						/>
+					</div>
+				))}
+			</div>
 		</div>
 	);
 };

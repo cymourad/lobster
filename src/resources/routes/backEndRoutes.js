@@ -4,12 +4,17 @@
  */
 
 // You can go to this address to read the documentation of these routes in more depth
-const BACK_END_BASE_URL = "https://posture.spottscheduler.com/";
+const BACK_END_BASE_URL = "https://posture.spottscheduler.com";
 
-export default BACK_END_ROUTE = {
+export const BACK_END_ROUTE = {
 	GET: {
-		SESSION: BACK_END_BASE_URL + "/session",
+		// you get a dictionary of results where the key is the timestamp (5 min intervals)
+		// and the value has all the analysis for that aggregated interval
 		SESSION_SUMMARY: BACK_END_BASE_URL + "/session/summary",
+
+		// you get only the last 5 minutes
+		SESSION_SUMMARY_INTERVAL: BACK_END_BASE_URL + "/session/summary/interval",
+
 		USER: BACK_END_BASE_URL + "/user",
 	},
 	POST: {
