@@ -55,18 +55,29 @@ const Dashboard = () => {
 			objectArray.forEach(([key, value]) => {
 				// skip the -1 case (the average of the entire session)
 				if (key != -1) {
-					let separateTips = [];
+					let tips = {
+						tiredness: "✅ Doing well.",
+						monitor: "✅ Perfect height.",
+						elbow: "✅ Perfect posture.",
+						back: "✅ Perfect posture.",
+						chair: "✅ Perfect hieght.",
+						desk: "✅ Perfect height.",
+						face: "✅ Perfect posture.",
+						feet: "✅ Perfect posture.",
+					};
 
 					// flatten value.recommendations to an array of user_message and put it under tips
-					value.recommendations.forEach((recommendation) =>
-						// TODO should we instead put the property name?
-						separateTips.push(recommendation.user_message)
+					value.recommendations.forEach(
+						(recommendation) =>
+							// TODO should we instead put the property name?
+							(tips[recommendation.property] =
+								"❌ " + recommendation.user_message)
 					);
 
 					graphData.push({
-						x: new Date(key * 1000),
+						x: new Date(key * 1000), // convert unix timestamp to date object
 						y: Math.round(value.score),
-						tips: separateTips.join("\n"),
+						...tips,
 					});
 				}
 			});

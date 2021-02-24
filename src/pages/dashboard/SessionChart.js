@@ -36,7 +36,16 @@ const SessionChart = ({ sessionHistory }) => {
 		data: [
 			{
 				type: "line",
-				toolTipContent: "{y}%: {tips}",
+				toolTipContent: `
+						<strong>Score</strong>: {y}% <br/> 
+						<strong>Tiredness</strong>: {tiredness} <br/>
+						<strong>Monitor</strong>: {monitor} <br/>
+						<strong>Elbow</strong>: {elbow} <br/>
+						<strong>Back</strong>: {back} <br/>
+						<strong>Chair</strong>: {chair} <br/>
+						<strong>Desk</strong>: {desk} <br/>
+						<strong>Face</strong>: {face} <br/>
+						<strong>Feet</strong>: {feet} <br/>`,
 				dataPoints: sessionHistory,
 			},
 		],
