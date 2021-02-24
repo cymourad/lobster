@@ -31,7 +31,7 @@ const SessionChart = ({ sessionHistory }) => {
 		axisX: {
 			title: "Time",
 			// prefix: "W",
-			interval: 2,
+			// interval: 2,
 		},
 		data: [
 			{

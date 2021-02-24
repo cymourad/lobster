@@ -55,15 +55,19 @@ const Dashboard = () => {
 			objectArray.forEach(([key, value]) => {
 				// skip the -1 case (the average of the entire session)
 				if (key != -1) {
-					let tips = [];
+					let separateTips = [];
 
 					// flatten value.recommendations to an array of user_message and put it under tips
 					value.recommendations.forEach((recommendation) =>
 						// TODO should we instead put the property name?
-						tips.push(recommendation.user_message)
+						separateTips.push(recommendation.user_message)
 					);
 
-					graphData.push({ y: value.score, tips });
+					graphData.push({
+						x: new Date(key * 1000),
+						y: Math.round(value.score),
+						tips: separateTips.join("\n"),
+					});
 				}
 			});
 
