@@ -21,6 +21,7 @@ const SessionInfoForm = ({
 	setUserID,
 	sessionID,
 	setSessionID,
+	fetchSessionInfo,
 }) => {
 	const classes = useStyles();
 
@@ -54,9 +55,13 @@ const SessionInfoForm = ({
 					color="secondary"
 					className={classes.button}
 					startIcon={<Edit />}
-					onClick={() => setSessionInfoIsEditable(!sessionInfoIsEditable)}
+					onClick={() => {
+						setSessionInfoIsEditable(!sessionInfoIsEditable);
+						// fetch info for new user and session once locked in
+						if (sessionInfoIsEditable) fetchSessionInfo();
+					}}
 				>
-					Edit
+					{sessionInfoIsEditable ? "Save" : "Edit"}
 				</Button>
 			</form>
 		</div>

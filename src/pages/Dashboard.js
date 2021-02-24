@@ -34,7 +34,7 @@ const Dashboard = () => {
 	 * All the scores and recommendations that user had since beginning of session
 	 * Each object has the following properties:
 	 * - y: [number] the score
-	 * - tip: [array of strings] , each string is the user_message given at that time
+	 * - tips: [array of strings] , each string is the user_message given at that time
 	 */
 	// TODO initialize as an empty array
 	const [sessionHistory, setSessionHistory] = useState(dummySessionHistory);
@@ -57,8 +57,9 @@ const Dashboard = () => {
 				if (key != -1) {
 					let tips = [];
 
-					// flatten value.recommendations to an array of user_message and put it under tip
+					// flatten value.recommendations to an array of user_message and put it under tips
 					value.recommendations.forEach((recommendation) =>
+						// TODO should we instead put the property name?
 						tips.push(recommendation.user_message)
 					);
 
@@ -76,9 +77,13 @@ const Dashboard = () => {
 				setCurrentScore(score);
 				setCurrentRecommendations(recommendations);
 			}
+
+			setNotification(null); // clear error message
 		} catch (e) {
-			console.log(e);
-			setNotification(<p style={{ color: "red" }}>Error! {e.message}</p>);
+			console.log(e.response);
+			setNotification(
+				<p style={{ color: "red" }}>Error! {e.response.data.message}</p>
+			);
 		}
 		setIsLoading(false);
 	};
@@ -108,6 +113,7 @@ const Dashboard = () => {
 					setSessionID={setSessionID}
 					sessionInfoIsEditable={sessionInfoIsEditable}
 					setSessionInfoIsEditable={setSessionInfoIsEditable}
+					fetchSessionInfo={fetchSessionInfo}
 				/>
 			</div>
 			{notification && (
@@ -131,7 +137,6 @@ const Dashboard = () => {
 							display: "flex",
 							flexDirection: "column",
 							alignItems: "center",
-							// minWidth: 600,
 						}}
 					>
 						<div style={{ marginBottom: 20 }}>
@@ -169,27 +174,27 @@ const dummyRecommendations = [
 ];
 
 const dummySessionHistory = [
-	{ y: 64, tip: ["wash ur face", "brush your"] },
-	{ y: 61, tip: "wash ur face" },
-	{ y: 64, tip: "wash ur face" },
-	{ y: 62, tip: "wash ur face" },
-	{ y: 64, tip: "wash ur face" },
-	{ y: 60, tip: "wash ur face" },
-	{ y: 58, tip: "wash ur face" },
-	{ y: 59, tip: "wash ur face" },
-	{ y: 53, tip: "wash ur face" },
-	{ y: 54, tip: "wash ur face" },
-	{ y: 61, tip: "wash ur face" },
-	{ y: 60, tip: "wash ur face" },
-	{ y: 55, tip: "wash ur face" },
-	{ y: 60, tip: "wash ur face" },
-	{ y: 56, tip: "wash ur face" },
-	{ y: 60, tip: "wash ur face" },
-	{ y: 59.5, tip: "wash ur face" },
-	{ y: 63, tip: "wash ur face" },
-	{ y: 58, tip: "wash ur face" },
-	{ y: 54, tip: "wash ur face" },
-	{ y: 59, tip: "wash ur face" },
-	{ y: 64, tip: "wash ur face" },
-	{ y: 59, tip: "wash ur face" },
+	{ y: 64, tips: ["wash ur face", "brush your"] },
+	{ y: 61, tips: "wash ur face" },
+	{ y: 64, tips: "wash ur face" },
+	{ y: 62, tips: "wash ur face" },
+	{ y: 64, tips: "wash ur face" },
+	{ y: 60, tips: "wash ur face" },
+	{ y: 58, tips: "wash ur face" },
+	{ y: 59, tips: "wash ur face" },
+	{ y: 53, tips: "wash ur face" },
+	{ y: 54, tips: "wash ur face" },
+	{ y: 61, tips: "wash ur face" },
+	{ y: 60, tips: "wash ur face" },
+	{ y: 55, tips: "wash ur face" },
+	{ y: 60, tips: "wash ur face" },
+	{ y: 56, tips: "wash ur face" },
+	{ y: 60, tips: "wash ur face" },
+	{ y: 59.5, tips: "wash ur face" },
+	{ y: 63, tips: "wash ur face" },
+	{ y: 58, tips: "wash ur face" },
+	{ y: 54, tips: "wash ur face" },
+	{ y: 59, tips: "wash ur face" },
+	{ y: 64, tips: "wash ur face" },
+	{ y: 59, tips: "wash ur face" },
 ];
