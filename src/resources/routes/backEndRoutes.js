@@ -12,9 +12,6 @@ export const BACK_END_ROUTE = {
 		// and the value has all the analysis for that aggregated interval
 		SESSION_SUMMARY: BACK_END_BASE_URL + "/session/summary",
 
-		// you get only the last 5 minutes
-		SESSION_SUMMARY_INTERVAL: BACK_END_BASE_URL + "/session/summary/interval",
-
 		USER: BACK_END_BASE_URL + "/user",
 	},
 	POST: {

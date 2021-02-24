@@ -39,46 +39,21 @@ const Dashboard = () => {
 	// TODO initialize as an empty array
 	const [sessionHistory, setSessionHistory] = useState(dummySessionHistory);
 
-	const fetchLatestInfo = async () => {
+	const fetchSessionInfo = async () => {
 		setIsLoading(true);
 		try {
 			const response = await axios.get(
-				BACK_END_ROUTE.GET.SESSION_SUMMARY_INTERVAL,
-				{
-					headers: {
-						user_id: userID,
-						session_id: sessionID,
-						"Access-Control-Allow-Origin": "*",
-					},
-				}
+				`${BACK_END_ROUTE.GET.SESSION_SUMMARY}/${userID}/${sessionID}`
 			);
-			console.log(response);
-			const { results } = response.data;
-			const { score, recommendations } = results;
-
-			setCurrentScore(score);
-			setCurrentRecommendations(recommendations);
-		} catch (e) {
-			console.log(e.message);
-			setNotification(<p style={{ color: "red" }}>Error! {e.message}</p>);
-		}
-		setIsLoading(false);
-	};
-
-	const fetchSessionSummary = async () => {
-		setIsLoading(true);
-		try {
-			const response = await axios.get(BACK_END_ROUTE.GET.SESSION_SUMMARY, {
-				headers: { user_id: userID, session_id: sessionID },
-			});
 
 			const { results } = response.data;
 
+			// condtruct session history data for graph
 			let graphData = [];
 			const objectArray = Object.entries(results);
 
 			objectArray.forEach(([key, value]) => {
-				// handle the -1 case (the average of the entire session)
+				// skip the -1 case (the average of the entire session)
 				if (key != -1) {
 					let tips = [];
 
@@ -92,6 +67,15 @@ const Dashboard = () => {
 			});
 
 			setSessionHistory(graphData);
+
+			// set current score and recommendation
+			if (objectArray.length > 0) {
+				const latestInfo = objectArray[objectArray.length - 1];
+				const { score, recommendations } = latestInfo[1];
+
+				setCurrentScore(score);
+				setCurrentRecommendations(recommendations);
+			}
 		} catch (e) {
 			console.log(e);
 			setNotification(<p style={{ color: "red" }}>Error! {e.message}</p>);
@@ -101,38 +85,15 @@ const Dashboard = () => {
 
 	useEffect(
 		() => {
-			// const interval = setInterval(
-			// 	() => {
-			// 		console.log("This will run every 5 minutes!");
-			// 		fetchLatestInfo();
-			// 		fetchSessionSummary();
-			// 	},
-			// 	5 * 60 * 1000 // interval in msec
-			// );
-			// return () => clearInterval(interval);
+			fetchSessionInfo(); // run it when first render
 
-			const test = async () => {
-				try {
-					const response = await fetch(
-						"https://posture.spottscheduler.com/session/summary",
-						{
-							method: "GET",
-							headers: {
-								user_id: "7",
-								session_id: "29",
-								"Sec-Fetch-Mode": "cors",
-								"Referrer Policy": "strict-origin-when-cross-origin",
-							},
-						}
-					);
-
-					console.log(response);
-				} catch (e) {
-					console.log(e);
-				}
-			};
-
-			test();
+			const interval = setInterval(
+				() => {
+					fetchSessionInfo();
+				},
+				5 * 60 * 1000 // interval in msec
+			);
+			return () => clearInterval(interval);
 		},
 		[] // only once when page first loads
 	);
