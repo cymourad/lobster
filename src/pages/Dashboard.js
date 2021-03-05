@@ -16,7 +16,7 @@ import { BACK_END_ROUTE } from "../resources/routes/backEndRoutes";
 
 const Dashboard = () => {
 	const [isLoading, setIsLoading] = useState(false);
-	const [notification, setNotification] = useState(null); // to show what's happening in back-end
+	const [error, setError] = useState(null); // to show what's happening in back-end
 
 	const [userID, setUserID] = useState(7); // the user ID for which we retreieve data
 	const [sessionID, setSessionID] = useState(29); // the session ID that we are exploring
@@ -93,25 +93,42 @@ const Dashboard = () => {
 				setCurrentRecommendations(recommendations);
 			}
 
-			setNotification(null); // clear error message
+			setError(null); // clear error message
 		} catch (e) {
 			console.log(e.response);
-			setNotification(
+			setError(
 				<p style={{ color: "red" }}>Error! {e.response.data.message}</p>
 			);
 		}
 		setIsLoading(false);
 	};
 
+	const showNotification = () => {
+		const options = {
+			body: "We have a few recommendations to correct your poster",
+			icon:
+				"https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/microsoft/209/lobster_1f99e.png",
+			dir: "ltr",
+		};
+		new Notification("Hey", options);
+	};
+
 	useEffect(
 		() => {
+			if (!("Notification" in window)) {
+				console.log("This browser does not support desktop notification");
+			} else {
+				Notification.requestPermission();
+			}
+
 			fetchSessionInfo(); // run it when first render
 
 			const interval = setInterval(
 				() => {
 					fetchSessionInfo();
+					showNotification();
 				},
-				5 * 60 * 1000 // interval in msec
+				1 * 60 * 1000 // interval in msec
 			);
 			return () => clearInterval(interval);
 		},
@@ -131,9 +148,7 @@ const Dashboard = () => {
 					fetchSessionInfo={fetchSessionInfo}
 				/>
 			</div>
-			{notification && (
-				<div style={{ textAlign: "center", margin: 50 }}>{notification}</div>
-			)}
+			{error && <div style={{ textAlign: "center", margin: 50 }}>{error}</div>}
 			{isLoading ? (
 				<CircularProgress />
 			) : (
