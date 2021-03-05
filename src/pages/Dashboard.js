@@ -158,7 +158,9 @@ const Dashboard = () => {
 			</div>
 			{error && <div style={{ textAlign: "center", margin: 50 }}>{error}</div>}
 			{isLoading ? (
-				<CircularProgress />
+				<div style={{ textAlign: "center", margin: 100 }}>
+					<CircularProgress />
+				</div>
 			) : (
 				<div
 					style={{
