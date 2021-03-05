@@ -16,26 +16,36 @@ import CanvasJSReact from "../../lib/canvasjs.react";
 var CanvasJS = CanvasJSReact.CanvasJS;
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
-const SessionChart = ({ sessionHistory }) => {
+const SessionChart = ({ sittingData, standingData }) => {
 	const options = {
 		animationEnabled: true,
 		// exportEnabled: true,
-		theme: "light2", // "light1", "dark1", "dark2"
-		// title:{
-		// 	text: "Bounce Rate by Week of Year"
-		// },
+		theme: "light2",
+		title: {
+			text: "Session History",
+		},
 		axisY: {
 			title: "Score",
 			suffix: "%",
 		},
 		axisX: {
 			title: "Time",
-			// prefix: "W",
-			// interval: 2,
+		},
+		toolTip: {
+			shared: true,
+		},
+		legend: {
+			cursor: "pointer",
+			verticalAlign: "top",
+			horizontalAlign: "center",
+			dockInsidePlotArea: true,
 		},
 		data: [
 			{
 				type: "line",
+				axisYType: "primary",
+				name: "Sitting",
+				showInLegend: true,
 				toolTipContent: `
 						<strong>Score</strong>: {y}% <br/> 
 						<strong>Tiredness</strong>: {tiredness} <br/>
@@ -46,7 +56,24 @@ const SessionChart = ({ sessionHistory }) => {
 						<strong>Desk</strong>: {desk} <br/>
 						<strong>Face</strong>: {face} <br/>
 						<strong>Feet</strong>: {feet} <br/>`,
-				dataPoints: sessionHistory,
+				dataPoints: sittingData,
+			},
+			{
+				type: "line",
+				axisYType: "primary",
+				name: "Standing",
+				showInLegend: true,
+				toolTipContent: `
+						<strong>Score</strong>: {y}% <br/> 
+						<strong>Tiredness</strong>: {tiredness} <br/>
+						<strong>Monitor</strong>: {monitor} <br/>
+						<strong>Elbow</strong>: {elbow} <br/>
+						<strong>Back</strong>: {back} <br/>
+						<strong>Chair</strong>: {chair} <br/>
+						<strong>Desk</strong>: {desk} <br/>
+						<strong>Face</strong>: {face} <br/>
+						<strong>Feet</strong>: {feet} <br/>`,
+				dataPoints: standingData,
 			},
 		],
 	};
