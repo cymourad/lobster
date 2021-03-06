@@ -169,7 +169,7 @@ const Dashboard = () => {
 						justifyContent: "center",
 					}}
 				>
-					<div style={{ minWidth: 600, marginRight: 30 }}>
+					<div style={{ minWidth: 800, marginRight: 30 }}>
 						<SessionChart
 							standingData={sessionStandingHistory}
 							sittingData={sessionSittingHistory}

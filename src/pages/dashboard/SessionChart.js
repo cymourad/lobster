@@ -38,7 +38,6 @@ const SessionChart = ({ sittingData, standingData }) => {
 			cursor: "pointer",
 			verticalAlign: "top",
 			horizontalAlign: "center",
-			dockInsidePlotArea: true,
 		},
 		data: [
 			{
@@ -47,6 +46,7 @@ const SessionChart = ({ sittingData, standingData }) => {
 				name: "Sitting",
 				showInLegend: true,
 				toolTipContent: `
+						<strong style="text-decoration:underline;">Sitting</strong><br/>
 						<strong>Score</strong>: {y}% <br/> 
 						<strong>Tiredness</strong>: {tiredness} <br/>
 						<strong>Monitor</strong>: {monitor} <br/>
@@ -64,6 +64,7 @@ const SessionChart = ({ sittingData, standingData }) => {
 				name: "Standing",
 				showInLegend: true,
 				toolTipContent: `
+						<strong style="text-decoration:underline;">Standing</strong><br/>
 						<strong>Score</strong>: {y}% <br/> 
 						<strong>Tiredness</strong>: {tiredness} <br/>
 						<strong>Monitor</strong>: {monitor} <br/>
