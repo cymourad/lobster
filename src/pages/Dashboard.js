@@ -18,8 +18,9 @@ const Dashboard = () => {
 	const [isLoading, setIsLoading] = useState(false);
 	const [error, setError] = useState(null); // to show what's happening in back-end
 
+	const [userEmail, setUserEmail] = useState("dansalib98@gmail.com");
 	const [userID, setUserID] = useState(7); // the user ID for which we retreieve data
-	const [sessionID, setSessionID] = useState(29); // the session ID that we are exploring
+	const [sessionID, setSessionID] = useState(225); // the session ID that we are exploring
 	const [sessionInfoIsEditable, setSessionInfoIsEditable] = useState(false);
 
 	const [currentScore, setCurrentScore] = useState(0); // the latest score of the user
@@ -95,6 +96,8 @@ const Dashboard = () => {
 
 			setCurrentScore(score);
 
+			console.log(currentRecommendations);
+
 			if (!isEqual(recommendations, currentRecommendations)) {
 				showNotification();
 				setCurrentRecommendations(recommendations);
@@ -104,9 +107,11 @@ const Dashboard = () => {
 		} catch (e) {
 			console.log(e);
 
-			setError(
-				<p style={{ color: "red" }}>Error! {e.response.data.message}</p>
-			);
+			setError(<p style={{ color: "red" }}>Error fetching session!</p>);
+			setCurrentScore(0);
+			setCurrentRecommendations([]);
+			setSessionSittingHistory([]);
+			setSessionStandingHistory([]);
 		}
 		setIsLoading(false);
 	};
@@ -147,6 +152,8 @@ const Dashboard = () => {
 		<div>
 			<div style={{ textAlign: "center", margin: 50 }}>
 				<SessionInfoForm
+					userEmail={userEmail}
+					setUserEmail={setUserEmail}
 					userID={userID}
 					setUserID={setUserID}
 					sessionID={sessionID}

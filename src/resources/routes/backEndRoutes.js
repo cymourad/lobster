@@ -12,7 +12,13 @@ export const BACK_END_ROUTE = {
 		// and the value has all the analysis for that aggregated interval
 		SESSION_SUMMARY: BACK_END_BASE_URL + "/session/summary",
 
+		// supply email as param after user and get user profile
+		// user: {created_on, id, height, email, last_updated, name, token}
 		USER: BACK_END_BASE_URL + "/user",
+
+		// supply user ID as param and get an array of sessions under results
+		// {created_on, id, last_updated, user_id}
+		SESSION_HISTORY: BACK_END_BASE_URL + "/session/history",
 	},
 	POST: {
 		SESSION: BACK_END_BASE_URL + "/session",
