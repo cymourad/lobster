@@ -13,7 +13,7 @@ const Team = () => {
 	return (
 		<div style={{ textAlign: "center" }}>
 			<h1>The Team</h1>
-			<p>
+			<p style={{ width: "80%", margin: "auto" }}>
 				Some information about the team! We all study Mechatronics Engineering at the
 				University of Waterloo. Overall, this has been an interesting project to conduct
 				remotely over virtual meetings, as a result of COVID-19.

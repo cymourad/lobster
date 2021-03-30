@@ -22,6 +22,8 @@ const useStyles = makeStyles({
 		height: 20,
 		width: 20,
 		padding: 10,
+		position: "absolute",
+		top: 4,
 		float: "left",
 		transform: [{ rotate: "90deg" }],
 	},
@@ -32,6 +34,8 @@ const useStyles = makeStyles({
 	link: {
 		color: "white",
 		margin: 10,
+		fontWeight: 500,
+		textDecorationLine: "none",
 	},
 	activeLink: {
 		color: "#f50057",
