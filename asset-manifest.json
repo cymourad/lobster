@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/lobster/static/css/main.dc6bcf4a.chunk.css",
-    "main.js": "/lobster/static/js/main.1d0eb843.chunk.js",
-    "main.js.map": "/lobster/static/js/main.1d0eb843.chunk.js.map",
+    "main.js": "/lobster/static/js/main.bb962063.chunk.js",
+    "main.js.map": "/lobster/static/js/main.bb962063.chunk.js.map",
     "runtime-main.js": "/lobster/static/js/runtime-main.a7b14d24.js",
     "runtime-main.js.map": "/lobster/static/js/runtime-main.a7b14d24.js.map",
     "static/js/2.54c5e9d3.chunk.js": "/lobster/static/js/2.54c5e9d3.chunk.js",
@@ -35,6 +35,6 @@
     "static/js/runtime-main.a7b14d24.js",
     "static/js/2.54c5e9d3.chunk.js",
     "static/css/main.dc6bcf4a.chunk.css",
-    "static/js/main.1d0eb843.chunk.js"
+    "static/js/main.bb962063.chunk.js"
   ]
 }
