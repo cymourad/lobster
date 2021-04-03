@@ -22,7 +22,7 @@ import { subsystemIcon } from "../resources/data/subsystems";
 const useStyles = makeStyles(() => ({
 	root: {
 		width: "90%",
-		maxWidth: 1000,
+		maxWidth: 800, // 1000,
 		display: "flex",
 		textAlign: "start",
 		margin: 10,
@@ -80,7 +80,7 @@ const BlogCard = ({ image, title, text, subsystems, authors, date }) => {
 					<Typography variant="subtitle1" color="textSecondary">
 						{text}
 					</Typography>
-					<CardActions>
+					{/* <CardActions>
 						<Link
 							to={FRONT_END_ROUTE.PROGRESS + "/" + title.split(" ").join("-")}
 						>
@@ -88,7 +88,7 @@ const BlogCard = ({ image, title, text, subsystems, authors, date }) => {
 								Read more
 							</Button>
 						</Link>
-					</CardActions>
+					</CardActions> */}
 				</CardContent>
 			</div>
 			<CardMedia className={classes.cover} image={image} title={title} />

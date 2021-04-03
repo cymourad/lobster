@@ -69,7 +69,7 @@ const Blog = ({ match }) => {
 			<p>{blogInfo.summary}</p>
 			<Divider variant="middle" />
 			{innerComponent}
-			<Divider variant="middle" />
+			{/* <Divider variant="middle" />
 			<div style={{ textAlign: "center", margin: 10 }}>
 				<Button variant="contained" style={{ margin: 10 }}>
 					More blogs by the same author
@@ -77,7 +77,7 @@ const Blog = ({ match }) => {
 				<Button variant="contained" style={{ margin: 10 }}>
 					More blogs about the same subsystem
 				</Button>
-			</div>
+			</div> */}
 		</div>
 	);
 };

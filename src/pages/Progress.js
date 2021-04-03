@@ -21,7 +21,9 @@ const Progress = () => {
 		<div style={{ textAlign: "center" }}>
 			<h1>Our Journey</h1>
 			<BlogSearchFilter allBlogs={blogInfo} setBlogs={setBlogs} />
-			<div style={{ display: "flex", justifyContent: "center" }}>
+			<div
+				style={{ display: "flex", justifyContent: "center", flexWrap: "wrap" }}
+			>
 				{blogs ? (
 					blogs.map((blog) => (
 						<BlogCard

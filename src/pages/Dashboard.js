@@ -18,9 +18,9 @@ const Dashboard = () => {
 	const [isLoading, setIsLoading] = useState(false);
 	const [error, setError] = useState(null); // to show what's happening in back-end
 
-	const [userEmail, setUserEmail] = useState("dansalib98@gmail.com");
-	const [userID, setUserID] = useState(7); // the user ID for which we retreieve data
-	const [sessionID, setSessionID] = useState(225); // the session ID that we are exploring
+	const [userEmail, setUserEmail] = useState("husseinalkasake+10@gmail.com");
+	const [userID, setUserID] = useState(16); // the user ID for which we retreieve data
+	const [sessionID, setSessionID] = useState(368); // the session ID that we are exploring
 	const [sessionInfoIsEditable, setSessionInfoIsEditable] = useState(false);
 
 	const [currentScore, setCurrentScore] = useState(0); // the latest score of the user
@@ -118,7 +118,9 @@ const Dashboard = () => {
 
 	const showNotification = () => {
 		const options = {
-			body: "We have a few recommendations to correct your poster",
+			body: "We have a few recommendations to correct your posture.",
+			// body:
+			// 	"Looks like you are getting tired of sitting! Maybe it's time to stand.",
 			icon:
 				"https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/microsoft/209/lobster_1f99e.png",
 			dir: "ltr",
@@ -137,13 +139,13 @@ const Dashboard = () => {
 
 			fetchSessionInfo(); // run it when first render
 
-			const interval = setInterval(
-				() => {
-					fetchSessionInfo();
-				},
-				1 * 60 * 1000 // interval in msec
-			);
-			return () => clearInterval(interval);
+			// const interval = setInterval(
+			// 	() => {
+			// 		fetchSessionInfo();
+			// 	},
+			// 	1 * 60 * 1000 // interval in msec
+			// );
+			// return () => clearInterval(interval);
 		},
 		[] // only once when page first loads
 	);
