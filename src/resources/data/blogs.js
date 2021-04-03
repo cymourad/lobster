@@ -16,7 +16,7 @@ export const BLOG_TITLE = {
 	STEPPER_MOTOR: "Stepper Motor",
 	SERVER_IMPL: "Server Implementation",
 	TEAM_MEETING: "Team Meeting",
-	DESK: "PRIME Cables Desk",
+	DESK: "VIVO PRIME Cables Desk",
 	FLASK: "Created Flask App",
 	DATABASE: "Created Database on AWS RDS (Relational Database Service)",
 	INT_DATABASE: "Integrated Database with Flask App",
@@ -37,7 +37,7 @@ export const BLOG_TITLE = {
 	NEW_COUPLER: "New Coupler",
 	TABLE_COVER: "Table Cover",
 	MOTOR_PROBLEM2: "Motor Torque Deficeincy",
-	COUPLER2: "New Coupler for NEMA 23 STepper Motor",
+	COUPLER2: "New Coupler for NEMA 23 Stepper Motor",
 	NEW_MOTOR_MOUNT: "New Motor Mount for NEMA 23 STepper Motor",
 	FILMED_TESTED: "Filmed and Tested Final Product",
 }
@@ -367,7 +367,7 @@ const blogs = [
 				</ul>
 			</ul>,
 		authors: [TEAM_MEMBER_NAME.JASON],
-		date: new Date("2021-01-23"),
+		date: new Date("2021-02-23"),
 		subsystems: [SUBSYSTEM.MECHANICAL],
 	},
 	{
